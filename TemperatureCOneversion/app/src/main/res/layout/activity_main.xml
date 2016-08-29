@@ -12,5 +12,80 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:text="Convert Tempertature!"
+        android:id="@+id/textView" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/convert"
+        android:id="@+id/calcbutton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="57dp" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/FahText"
+        android:layout_marginTop="94dp"
+        android:layout_below="@+id/outputText"
+        android:layout_toLeftOf="@+id/textView2"
+        android:layout_toStartOf="@+id/textView2" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/CelText"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="38dp"
+        android:layout_alignLeft="@+id/FahText"
+        android:layout_alignStart="@+id/FahText"
+        android:layout_toLeftOf="@+id/textView2"
+        android:layout_toStartOf="@+id/textView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Celsius"
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/CelText"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_toRightOf="@+id/button"
+        android:layout_toEndOf="@+id/button" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Fahrenheit"
+        android:id="@+id/textView3"
+        android:layout_alignBottom="@+id/FahText"
+        android:layout_toRightOf="@+id/FahText"
+        android:layout_toEndOf="@+id/FahText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+
+        android:id="@+id/outputText"
+        android:layout_marginTop="58dp"
+        android:layout_below="@+id/CelText"
+        android:layout_alignRight="@+id/calcbutton"
+        android:layout_alignEnd="@+id/calcbutton" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:id="@+id/outputText"
+        android:layout_alignTop="@+id/outputText"
+        android:layout_alignLeft="@+id/calcbutton"
+        android:layout_alignStart="@+id/calcbutton" />
 </RelativeLayout>
