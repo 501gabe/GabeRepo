@@ -58,10 +58,10 @@ public class SettingsActivity extends AppCompatActivity {
 
                 RadioGroup radioGroup = (RadioGroup) findViewById(R.id.radioGroup);
 
-// Deselect all buttons
+                // Deselect all buttons
                 radioGroup.clearCheck();
 
-// Which radio button should be selected?
+                // Which radio button should be selected?
                 switch (mAnimOption) {
 
                     case FAST:

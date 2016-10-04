@@ -1,5 +1,7 @@
 package com.gabe.android.aca.notetoself;
 
+import android.net.Uri;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -12,31 +14,33 @@ public class Note {
     private boolean mIdea;
     private boolean mTodo;
     private boolean mImportant;
-
+    private Uri mUri;
 
     private static final String JSON_TITLE = "title";
     private static final String JSON_DESCRIPTION = "description";
-    private static final String JSON_IDEA = "idea" ;
+    private static final String JSON_IDEA = "idea";
     private static final String JSON_TODO = "todo";
     private static final String JSON_IMPORTANT = "important";
+    private static final String JSON_URI = "Uri";
 
     // Constructor
 // Only used when new is called with a JSONObject
     public Note(JSONObject jo) throws JSONException {
 
-        mTitle =  jo.getString(JSON_TITLE);
+        mTitle = jo.getString(JSON_TITLE);
         mDescription = jo.getString(JSON_DESCRIPTION);
         mIdea = jo.getBoolean(JSON_IDEA);
         mTodo = jo.getBoolean(JSON_TODO);
         mImportant = jo.getBoolean(JSON_IMPORTANT);
+        mUri = Uri.parse(jo.getString(JSON_URI));
     }
+
     // Now we must provide an empty default constructor
 // for when we create a Note as we provide a
 // specialized constructor that must be used.
-    public Note (){
+    public Note() {
 
     }
-
 
 
     public String getTitle() {
@@ -79,9 +83,19 @@ public class Note {
         this.mImportant = mImportant;
     }
 
+    public Uri getUri() {
+        return mUri;
+    }
 
+    public void setUri(Uri uri) {
+        mUri = uri;
+    }
 
-    public JSONObject convertToJSON() throws JSONException{
+    //public static String getJsonUri() {
+    //    return JSON_URI;
+    //}
+
+    public JSONObject convertToJSON() throws JSONException {
 
         JSONObject jo = new JSONObject();
 
@@ -90,9 +104,12 @@ public class Note {
         jo.put(JSON_IDEA, mIdea);
         jo.put(JSON_TODO, mTodo);
         jo.put(JSON_IMPORTANT, mImportant);
+        jo.put(JSON_URI, mUri.toString());
 
         return jo;
     }
+
+
 }
 
 

@@ -33,6 +33,9 @@ public class DialogShowNote extends DialogFragment {
         ImageView ivImportant = (ImageView) dialogView.findViewById(R.id.imageViewImportant);
         ImageView ivTodo = (ImageView) dialogView.findViewById(R.id.imageViewTodo);
         ImageView ivIdea = (ImageView) dialogView.findViewById(R.id.imageViewIdea);
+        ImageView imageView = (ImageView) dialogView.findViewById(R.id.imageView);
+
+        imageView.setImageURI(mNote.getUri());
 
         if (!mNote.isImportant()){
             ivImportant.setVisibility(View.GONE);
@@ -44,16 +47,17 @@ public class DialogShowNote extends DialogFragment {
             ivIdea.setVisibility(View.GONE);
         }
 
-        Button btnOK = (Button) dialogView.findViewById(R.id.btnOK);
+        Button btnOK = (Button) dialogView.findViewById(R.id.btnOk);
 
         builder.setView(dialogView).setMessage("Your Note");
 
         btnOK.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 dismiss();
             }
         });
+
 
         return builder.create();
 
